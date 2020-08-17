@@ -74,6 +74,10 @@
         .tool-container aside {
             padding-bottom: 32px !important;
         }
+
+        .alerts {
+            top: 56px !important;
+        }
         
         /* Hide LumiNUS logo */
         .brand img{
