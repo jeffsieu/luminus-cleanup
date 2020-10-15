@@ -1,235 +1,253 @@
 /* ==UserStyle==
 @name           Luminus Cleanup
 @namespace      github.com/jeffsieu/luminus-cleanup
-@version        1.0.2
+@version        1.0.3
 @description    Cleans up the LumiNUS interface a bit
 @author         Jeff Sieu
 ==/UserStyle== */
 
 @-moz-document domain("luminus.nus.edu.sg") {
-    body {
-        --main-padding: 3vw;
-        --main-nav-height: 56px;
+  body {
+    --main-padding: 3vw;
+    --main-nav-height: 56px;
+  }
+
+  @media (min-width: 1200px) {
+    /* Fonts */
+    .main-content .columns > section h3 {
+      font-weight: 500 !important;
     }
-    
+
+    .subapplication-navigation a {
+      font-weight: bold;
+    }
+
+    /* Adjust main nav and sub nav height and placement */
+    .main-nav {
+      padding: 0 var(--main-padding);
+      min-height: var(--main-nav-height) !important;
+      height: var(--main-nav-height) !important;
+    }
+
+    .main-nav ul a {
+      height: var(--main-nav-height) !important;
+    }
+
+    .subapplication-navigation {
+      display: flex !important;
+      align-items: center !important;
+      position: absolute;
+      top: 0;
+      padding: 0 0 0 var(--main-padding) !important;
+      height: var(--main-nav-height) !important;
+      background: transparent !important;
+    }
+
+    .subapplication-navigation a {
+      display: flex !important;
+      padding: 0 !important;
+      margin-right: 32px !important;
+      height: 54px;
+    }
+
+    @media (max-width: 1279px) {
+      .semester {
+        display: none !important;
+      }
+    }
+
+    .subapplication-navigation span,
+    .subapplication-navigation a {
+      margin-top: 0 !important;
+    }
+
+    /* Horizontal underline nav */
+    .horizontal .nav.nav-underline .btn.btn-link {
+      text-transform: uppercase !important;
+      font-weight: bold;
+    }
+
+    .height-89 {
+      height: auto !important;
+    }
+
     @media (min-width: 1200px) {
-        /* Fonts */
-        .main-content .columns > section h3 {
-            font-weight: 500 !important;
-        }
-        
-        .subapplication-navigation a {
-            font-weight: bold;
-        }
-        
-        /* Adjust main nav and sub nav height and placement */
-        .main-nav {
-            padding: 0 var(--main-padding);
-            min-height: var(--main-nav-height) !important;
-            height: var(--main-nav-height) !important;
-        }
-        
-        .main-nav ul a {
-            height: var(--main-nav-height) !important;
-        }
-        
-        .subapplication-navigation {
-            display: flex !important;
-            align-items: center !important;
-            position: absolute;
-            top: 0;
-            padding: 0 0 0 var(--main-padding) !important;
-            height: var(--main-nav-height) !important;
-            background: transparent !important;
-        }
-        
-        .subapplication-navigation a {
-            display: flex !important;
-            padding: 0 !important;
-            margin-right: 32px !important;
-            height: 54px;
-        }
-        
-        @media (max-width: 1279px) {
-            .semester{
-                display: none !important;
-            }
-        }
-        
-        .subapplication-navigation span,
-        .subapplication-navigation a {
-            margin-top: 0 !important;
-        }
-        
-        /* Recalculate height of containers to match new nav height */
-        .content-container {
-            height: 100% !important;
-            
-        }
-        
-        .content-container > ng-component {
-            height: calc(100% - 58px) !important;
-        }
-        
-        .tool-container aside {
-            padding-bottom: 32px !important;
-        }
-
-        .alerts {
-            top: 56px !important;
-        }
-        
-        /* Hide LumiNUS logo */
-        .brand img{
-            margin-top: -20px;
-            height: 0px !important;
-        }
-        
-        /* Change nav bar highlight to 2px tall */
-        .nav-underline a,
-        .nav-underline .btn-link.active,
-        .nav-underline .active.btn-icon,
-        .nav-underline a.active,
-        .nav-underline .btn-link.active,
-        .nav-underline .active.btn-icon,
-        .subapplication-navigation a,
-        .subapplication-navigation .btn-link,
-        .subapplication-navigation a.active,
-        .subapplication-navigation .btn-link.active {
-            border-bottom-width: 2px !important;
-        }
-        
-        /* Make acad year and user role smaller */
-        .acad-year-semester,
-        .user-role{
-            font-size: 12px !important;
-            margin: 0;
-        }
-            
-        /* Add side bar shadow */
-        aside + section {
-            box-shadow: inset 0 4px 5px 0 rgba(0,0,0,0.14);
-        }
-    
-        /* Adjust side bar padding */
-        aside > header,
-        aside .user-profile-wrapper.padding-0 {
-            padding-top: var(--main-padding) !important;
-            padding-left: var(--main-padding) !important;
-        }
-        
-        aside form {
-            padding: calc(var(--main-padding) / 2) var(--main-padding) 0 var(--main-padding) !important;
-        }
-        
-        aside {
-            padding: 0 !important;
-        }
-        
-        aside > h1 {
-            padding-top: var(--main-padding);
-            padding-left: var(--main-padding);
-        }
-        
-        nav-pills {
-            padding: 0 0 calc(var(--main-padding) + 56px) 0 !important;
-        }
-        
-        nav-pills a {
-            padding: 0 var(--main-padding) 0 var(--main-padding) !important;
-            margin: 0px !important;
-        }
-        
-        nav-pills .pills  > h3 {
-            padding-left: var(--main-padding) !important;
-        }
-      
-        /* Horizontal underline nav */
-        .horizontal .nav.nav-underline .btn.btn-link {
-          text-transform: uppercase !important;
-          font-weight: bold;
-        }
-      
-        @media (min-width: 1200px) {
-          .horizontal .nav.nav-underline .btn.btn-link {
-            font-size: 13px;
-            margin-right: 32px;
-          }
-        }
-
-        /* Custom scrollbar */
-        /* width */
-        ::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: #c1c1c1;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555;
-        }
-        
-        /* Hide original nav icons */
-        .main-nav ul a svg,
-        .main-nav ul .icon {
-            opacity: 0;
-        }
-        
-        /* Replace main nav icons */
-        .main-nav a {
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        a[tooltip="News & Notifications"] {
-             background-image: 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z' /></svg>");
-        }
-        
-        a[tooltip="Subscriptions"] {
-             background-image: 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M12 .64L8.23 3H5V5L2.97 6.29C2.39 6.64 2 7.27 2 8V18C2 19.11 2.9 20 4 20H20C21.11 20 22 19.11 22 18V8C22 7.27 21.61 6.64 21.03 6.29L19 5V3H15.77M7 5H17V9.88L12 13L7 9.88M8 6V7.5H16V6M5 7.38V8.63L4 8M19 7.38L20 8L19 8.63M8 8.5V10H16V8.5Z' /></svg>");
-        }
-        
-        .help a {
-             background-image: 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z' /></svg>");
-        }
-        
-        a[tooltip="Email"] {
-             background-image: 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z' /></svg>");
-        }
-        
-        a[tooltip="Sign out"] {
-             background-image: 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z' /></svg>");
-        }
+      .horizontal .nav.nav-underline .btn.btn-link {
+        margin-right: 32px;
+      }
     }
-  
+
+    @media (min-width: 768px) {
+      .horizontal .nav.nav-underline {
+        padding-top: 16px !important;
+      }
+
+      .horizontal .nav.nav-underline a {
+        padding-top: 12px !important;
+        padding-bottom: 10px !important;
+      }
+    }
+
+    /* Recalculate height of containers to match new nav height */
+    .content-container {
+      height: 100% !important;
+    }
+
+    .content-container > ng-component {
+      height: calc(100% - 58px) !important;
+    }
+
+    .tool-container aside {
+      padding-bottom: 32px !important;
+    }
+
+    .alerts {
+      top: 56px !important;
+    }
+
+    /* Hide LumiNUS logo */
+    .brand img {
+      margin-top: -20px;
+      height: 0px !important;
+    }
+
+    /* Make acad year and user role smaller */
+    .acad-year-semester,
+    .user-role {
+      font-size: 12px !important;
+      margin: 0;
+    }
+
+    /* Add side bar shadow */
+    aside + section {
+      box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    /* Adjust side bar padding */
+    aside > header,
+    aside .user-profile-wrapper.padding-0 {
+      padding-top: var(--main-padding) !important;
+      padding-left: var(--main-padding) !important;
+    }
+
+    aside form {
+      padding: calc(var(--main-padding) / 2) var(--main-padding) 0
+        var(--main-padding) !important;
+    }
+
+    aside {
+      padding: 0 !important;
+    }
+
+    aside > h1 {
+      padding-top: var(--main-padding);
+      padding-left: var(--main-padding);
+    }
+
+    nav-pills {
+      padding: 0 0 calc(var(--main-padding) + 56px) 0 !important;
+    }
+
+    nav-pills a {
+      padding: 0 var(--main-padding) 0 var(--main-padding) !important;
+      margin: 0px !important;
+    }
+
+    nav-pills .pills > h3 {
+      padding-left: var(--main-padding) !important;
+    }
+
+    /* Custom scrollbar */
+    /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Hide original nav icons */
+    .main-nav ul a svg,
+    .main-nav ul .icon {
+      opacity: 0;
+    }
+
+    /* Replace main nav icons */
+    .main-nav a {
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    a[tooltip="News & Notifications"] {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z' /></svg>");
+    }
+
+    a[tooltip="Subscriptions"] {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M12 .64L8.23 3H5V5L2.97 6.29C2.39 6.64 2 7.27 2 8V18C2 19.11 2.9 20 4 20H20C21.11 20 22 19.11 22 18V8C22 7.27 21.61 6.64 21.03 6.29L19 5V3H15.77M7 5H17V9.88L12 13L7 9.88M8 6V7.5H16V6M5 7.38V8.63L4 8M19 7.38L20 8L19 8.63M8 8.5V10H16V8.5Z' /></svg>");
+    }
+
+    .help a {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z' /></svg>");
+    }
+
+    a[tooltip="Email"] {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z' /></svg>");
+    }
+
+    a[tooltip="Sign out"] {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path fill='white' d='M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z' /></svg>");
+    }
+  }
+
   a.module-card {
     border-width: 4px !important;
   }
-  
+
   .task.completed :before {
     width: 4px !important;
   }
+
+  .header .nav.nav-underline {
+    height: var(--main-nav-height) !important;
+  }
+
+  .header .nav.nav-underline a.btn-link {
+    padding-bottom: 16px;
+  }
+
+  /* Change nav bar highlight to 2px tall */
+  .nav-underline a,
+  .nav-underline .btn-link.active,
+  .nav-underline .active.btn-icon,
+  .nav-underline a.active,
+  .nav-underline .btn-link.active,
+  .nav-underline .active.btn-icon,
+  .subapplication-navigation a,
+  .subapplication-navigation .btn-link,
+  .subapplication-navigation a.active,
+  .subapplication-navigation .btn-link.active {
+    border-bottom-width: 2px !important;
+  }
 }
 
-@-moz-document regexp("https://luminus.nus.edu.sg/user-profile") {
-    @media (min-width: 1200px) {
-        .content-container > ng-component {
-            height: 100% !important;
-        }   
+@-moz-document regexp("https://luminus.nus.edu.sg/user-profile")
+{
+  @media (min-width: 1200px) {
+    .content-container > ng-component {
+      height: 100% !important;
     }
+  }
 }
