@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Luminus Cleanup
 @namespace      github.com/jeffsieu/luminus-cleanup
-@version        1.0.3
+@version        1.0.4
 @description    Cleans up the LumiNUS interface a bit
 @author         Jeff Sieu
 ==/UserStyle== */
@@ -216,7 +216,7 @@
     border-width: 4px !important;
   }
 
-  .task.completed :before {
+  .task :before {
     width: 4px !important;
   }
 
