@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Luminus Cleanup
 @namespace      github.com/jeffsieu/luminus-cleanup
-@version        1.0.5
+@version        1.0.6
 @description    Cleans up the LumiNUS interface a bit
 @author         Jeff Sieu
 ==/UserStyle== */
@@ -146,6 +146,7 @@
 
     nav-pills {
       padding: 0 0 calc(var(--main-padding) + 56px) 0 !important;
+      min-height: 100% !important;
     }
 
     nav-pills a {
